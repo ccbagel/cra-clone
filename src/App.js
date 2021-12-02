@@ -12,7 +12,7 @@ function App() {
         <div>
             <div>
                 <h1 className="heading">Create-React-App clone</h1>
-                <p className="paragraph">By Hasan Ahmed</p>
+                <p className="paragraph">Created by Hasan Ahmed</p>
                 <p className="paragraph">Download my package on NPM to try it out, or simply check out the code on Github</p>
             </div>
             <div className="btn-div">

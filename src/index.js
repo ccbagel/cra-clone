@@ -2,9 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
-//to register/unregister
-//serviceWorker.unregister();
+
+registerServiceWorker();
+
+// register service worker
+function registerServiceWorker() {
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("service-worker.js")
+            .then(() => {
+                console.log("service worker successfully registered");
+            })
+            .catch(err => {
+                console.log(err, err.message)
+            })
+    }
+}
+
+// unregister service worker
+function unregisterServiceWorker() {
+    navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(reg => reg.unregister());
+    })
+} 

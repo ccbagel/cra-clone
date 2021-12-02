@@ -23,3 +23,9 @@ Hashed chunk files also incorporated for lazy loading.
 We also use the css loaders in the webpack config for our production environment but this time, we'll also use source maps for css. Instead of also inserting our css into the html head, we want to generate a css file so we could cache it. 
 
 I've also used plugins to copy all the files in the /public directory since they aren't passed through webpack except for the index.html
+
+-------SERVICE WORKER-------
+
+I'm using service workers to listen to requests and use the browser cache. This way, even if the connection fails it still works.
+
+The service worker has a couple of events. First is the install event. This is when the browser detects a new service worker. Then there's the activate phase which closes old instances of service workers and also looks for changes in service workers accordingly. Finally, fetch events which is triggered every time we fetch resources over the network. 
