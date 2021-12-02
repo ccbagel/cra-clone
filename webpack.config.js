@@ -1,7 +1,9 @@
 const webpackMerge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+//plugin for caching in `install` event service worker
+const ResourcesManifestWebpackPlugin = require("resources-manifest-webpack-plugin");
 
-module.exports = () => {
+module.exports = (env) => {
     return webpackMerge({
         entry: "./src/index.js",
         devtool: "source-map",
@@ -33,9 +35,13 @@ module.exports = () => {
                     PUBLIC_URL: ""
                     // href="<%= PUBLIC_URL %>/FILENAME>" />
                 }
-            })
+            }),
+            new ResourcesManifestWebpackPlugin(
+                /\.(html|js|css|svg|png|webp|jpe?g)$/,
+                "public/service-worker.js"
+                )
         ]
     }, 
-        require("./build-utls/webpack.development")
+        require(`./build-utls/webpack.${env.mode}`)
     );
 }  
