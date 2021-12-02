@@ -1,0 +1,6 @@
+//babel presets for React to transform jsx to valid JS, 
+//and `preset-env` to transform valid JS to support older browsers
+
+{
+    "presets": ["@babel/preset-react", "@babel/preset-env"]
+}
