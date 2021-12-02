@@ -3,7 +3,7 @@
     "name": "ccbagel-react-app",
     "main": "src/index.js",
     "bin": {
-        "ccbagel-react-app": "src/index.js"
+        "ccbagel-react-app": "/src/index.js"
     },
     "dependencies": {
         "ncp": "^2.0.0"

@@ -5,7 +5,7 @@ const { exec } = require("child_process");
 const { ncp } = require("ncp");
 const { version } = require("../package.json");
 
-if(process.argv.length > 3) {
+if(process.argv > 3) {
     return printHelp();
 }
 if(process.argv[2] === '-h' || process.argv[2] === '--help') {
