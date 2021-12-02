@@ -42,6 +42,6 @@ module.exports = (env) => {
                 )
         ]
     }, 
-        require(`./build-utls/webpack.${env.mode}`)
+        require(`./build-utils/webpack.${env.mode}`)
     );
 }  

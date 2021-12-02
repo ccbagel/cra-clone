@@ -1,4 +1,4 @@
-const VERSION = 4;
+const VERSION = 5;
 
 //cache all resources when a new service worker of the latest build is comissioned.
 const CACHE_NAME = `cra-clone-by-hasan__${VERSION}`;
