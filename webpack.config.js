@@ -1,7 +1,7 @@
 const webpackMerge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
-module.exports = () => {
+module.exports = (env) => {
     return webpackMerge({
         entry: "./src/index.js",
         devtool: "source-map",
@@ -36,6 +36,6 @@ module.exports = () => {
             })
         ]
     }, 
-        require("./build-utls/webpack.development")
+        require(`./build-utls/webpack.${env.mode}`)
     );
 }  

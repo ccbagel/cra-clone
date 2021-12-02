@@ -3,7 +3,9 @@
     "version": "1.0.0",
     "description": "Create-React-App clone",
     "scripts": {
-        "start": "webpack-dev-server --hot"
+        "start": "webpack-dev-server --env.mode development --hot",
+        "build": "rm -rf build && webpack --env.mode production",
+        "serve": "serve build/"
     },
     "repository": {
         "type": "git",

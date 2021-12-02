@@ -1,3 +1,5 @@
+-------DEV BUILD-------
+
 LOADERS: Loaders are functions that take some string of code and returns another string of code. For example, the Babel-loader takes some JSX and returns valid JS. Webpack allows us to import and export a lot of files. I used loaders to let webpack know how to use these files. So I used some rules in webpack that required a file to be processed in a certain way if it matches a given regex.
 Another type of imports are media files such as gifs, png, and even webp. For this, I was going to use `file-loader` in my webpack config to know how to handle these types of files. But instead, I'm hashing the file name no matter the configuration. Depending on the file name and extension, webpack will generate them in static/media/[name] and append a hash based on the content before finally appending the extension. 
 
@@ -10,3 +12,14 @@ WEBPACK DEVSERVER: Since the routing is done on the frontend, the devserver will
 Merging the dev config and the common config using webpackMerge module. This will merge the dev/build configs with the common configs.
 
 I'm also hot-reloading for better dev experience.
+
+
+-------PRODUCTION BUILD-------
+
+One key difference between the dev build and produciton build is that in the production build, we want hashes on the JS files so we can cache them longterm.
+
+Hashed chunk files also incorporated for lazy loading.
+
+We also use the css loaders in the webpack config for our production environment but this time, we'll also use source maps for css. Instead of also inserting our css into the html head, we want to generate a css file so we could cache it. 
+
+I've also used plugins to copy all the files in the /public directory since they aren't passed through webpack except for the index.html
