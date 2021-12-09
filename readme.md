@@ -8,7 +8,7 @@ This is a simple Create-React-App clone. Follow the steps below to try it out!
 
 3. Run `npm start`
 
-4. Navigate to `http://localhost:3000` to see the app working. That's all!
+4. Navigate to `http://localhost:8080` to see the app working. That's all!
 
 
 
